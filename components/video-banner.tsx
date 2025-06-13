@@ -24,15 +24,6 @@ export function VideoBanner() {
         setVideoError(true)
       })
     }
-
-    // Fallback to image if video doesn't load within 3 seconds
-    const timer = setTimeout(() => {
-      if (!videoLoaded) {
-        setVideoError(true)
-      }
-    }, 3000)
-
-    return () => clearTimeout(timer)
   }, [videoLoaded, videoSrc])
 
   return (
