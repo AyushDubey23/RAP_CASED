@@ -56,28 +56,7 @@ export function VideoBanner() {
             Your browser does not support the video tag.
           </video>
         ) : (
-          // Fallback to static image if video fails
-          <div className="relative w-full h-full">
-            <Image
-              src={fallbackImage || "/placeholder.svg"}
-              alt="RAPCASED Banner"
-              fill
-              priority
-              className="object-cover"
-              sizes="100vw"
-              onError={() => {
-                console.error("Fallback image failed to load")
-                // If even the fallback image fails, use a gradient background
-                const element = document.querySelector(".video-fallback-gradient")
-                if (element) {
-                  element.classList.add("bg-gradient-to-b", "from-gray-800", "to-black")
-                }
-              }}
-            />
-            <div className="video-fallback-gradient absolute inset-0"></div>
-          </div>
-        )}
-      </div>
+  
 
       {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
